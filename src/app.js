@@ -22,14 +22,13 @@ import errorHandler from './middleware/error.js';
 import { testLogger } from './routes/test.router.js';
 import { addLogger } from './middleware/logger.js';
 
-
 const app = express();
 const port = 8080;
 
+app.use(addLogger);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 //Socket.io webSockets
 const httpServer = app.listen(port, () => {

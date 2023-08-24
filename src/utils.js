@@ -8,7 +8,7 @@ import { ChatModel } from './DAO/models/chat.model.js';
 import { ProductService } from './services/products.service.js';
 import { ProductModel } from './DAO/models/products.model.js';
 import bcrypt from 'bcrypt';
-import { Faker, es, fakerES } from '@faker-js/faker';
+import { Faker, es } from '@faker-js/faker';
 
 /*********************** Multer ***********************/
 
@@ -152,7 +152,6 @@ export function generateProduct() {
   return {
     id: faker.database.mongodbObjectId(),
     title: faker.commerce.productName(),
-    description: fakerES.commerce.productDescription(),
     price: faker.commerce.price(),
     thumbnail: faker.internet.avatar(),
     code: faker.string.alphanumeric(5),
